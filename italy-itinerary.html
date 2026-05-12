@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>義大利攝影之旅 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --dark: #1a1612;
+    --brown: #5c3d2e;
+    --gold: #c9a84c;
+    --terracotta: #c4622d;
+    --sage: #6b7c5c;
+    --muted: #8a7e72;
+    --light-brown: #e8ddd0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .hero {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: 'ITALIA';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 160px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.04);
+    letter-spacing: 10px;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(245,240,232,0.5);
+    letter-spacing: 1px;
+    margin-top: 12px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .meta-value {
+    font-size: 13px;
+    color: var(--cream);
+  }
+
+  /* BUDGET BAR */
+  .budget-strip {
+    background: var(--terracotta);
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .budget-strip .b-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    text-transform: uppercase;
+  }
+
+  .budget-strip .b-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .budget-strip .b-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* MAIN LAYOUT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 32px;
+  }
+
+  /* DAY CARD */
+  .day-card {
+    margin-bottom: 40px;
+    border: 1px solid var(--light-brown);
+    background: white;
+    position: relative;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-card:nth-child(1) { animation-delay: 0.05s; }
+  .day-card:nth-child(2) { animation-delay: 0.1s; }
+  .day-card:nth-child(3) { animation-delay: 0.15s; }
+  .day-card:nth-child(4) { animation-delay: 0.2s; }
+  .day-card:nth-child(5) { animation-delay: 0.25s; }
+  .day-card:nth-child(6) { animation-delay: 0.3s; }
+  .day-card:nth-child(7) { animation-delay: 0.35s; }
+  .day-card:nth-child(8) { animation-delay: 0.4s; }
+  .day-card:nth-child(9) { animation-delay: 0.45s; }
+  .day-card:nth-child(10) { animation-delay: 0.5s; }
+
+  .day-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: start;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--light-brown);
+    gap: 16px;
+  }
+
+  .day-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .day-number span {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .day-title-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  .day-title-block .day-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+  }
+
+  .city-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    align-self: start;
+    margin-top: 4px;
+  }
+
+  .city-milan { background: var(--dark); color: var(--gold); }
+  .city-venice { background: #1a3a5c; color: #a8c5e0; }
+  .city-florence { background: #4a1c1c; color: #e8b4a0; }
+  .city-pisa { background: var(--sage); color: white; }
+  .city-pavia { background: var(--brown); color: var(--cream); }
+  .city-travel { background: var(--light-brown); color: var(--muted); }
+
+  .day-body {
+    padding: 0;
+  }
+
+  /* TIMELINE ITEMS */
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    border-bottom: 1px solid var(--light-brown);
+  }
+
+  .timeline-item:last-child { border-bottom: none; }
+
+  .tl-time {
+    padding: 16px 16px 16px 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    border-right: 1px solid var(--light-brown);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 18px;
+  }
+
+  .tl-content {
+    padding: 14px 20px 14px 20px;
+  }
+
+  .tl-icon {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 13px;
+  }
+
+  .tl-main {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--dark);
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+
+  .tl-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .tl-photo {
+    background: #fffbf5;
+    border-left: 3px solid var(--gold);
+  }
+
+  .tl-transport {
+    background: #f8f8f8;
+  }
+
+  .tl-sleep {
+    background: #f5f8f5;
+    border-left: 3px solid var(--sage);
+  }
+
+  /* INFO ROW */
+  .info-row {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--light-brown);
+    background: #faf9f7;
+  }
+
+  .info-cell {
+    flex: 1;
+    padding: 12px 20px;
+    border-right: 1px solid var(--light-brown);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .info-cell:last-child { border-right: none; }
+
+  .info-cell-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .info-cell-value {
+    font-size: 12px;
+    color: var(--dark);
+    line-height: 1.4;
+  }
+
+  /* NOTICE */
+  .notice {
+    background: #fff8ee;
+    border: 1px solid #e8d5b0;
+    border-left: 3px solid var(--gold);
+    padding: 12px 20px;
+    margin: 8px 24px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: var(--brown);
+    line-height: 1.6;
+  }
+
+  /* SECTION DIVIDER */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-brown);
+  }
+
+  /* TRAIN SUMMARY */
+  .train-summary {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 32px 40px;
+    margin-top: 8px;
+  }
+
+  .train-summary h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+
+  .train-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .train-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .train-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: rgba(245,240,232,0.8);
+    vertical-align: top;
+  }
+
+  .train-table tr:last-child td { border-bottom: none; }
+
+  .train-total {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .train-total .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .train-total .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--cream);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(245,240,232,0.3);
+    text-align: center;
+    padding: 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 40px 24px 36px; }
+    .hero h1 { font-size: 36px; }
+    .hero::before { font-size: 90px; }
+    .container { padding: 32px 16px; }
+    .day-header { grid-template-columns: 60px 1fr; }
+    .city-badge { display: none; }
+    .budget-strip { padding: 16px 24px; gap: 24px; }
+    .info-row { flex-wrap: wrap; }
+    .info-cell { min-width: 50%; }
+    .train-summary { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-tag">攝影旅遊行程 · 2026</div>
+  <h1>義大利<br><em>Dieci Giorni</em></h1>
+  <div class="hero-sub">Milan · Venice · Florence · Pisa · Pavia</div>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">出發</span>
+      <span class="meta-value">2026年6月1日</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">返台</span>
+      <span class="meta-value">2026年6月10日</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">天數</span>
+      <span class="meta-value">10 天</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">城市</span>
+      <span class="meta-value">5 城</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">身份</span>
+      <span class="meta-value">攝影師 · 學生</span>
+    </div>
+  </div>
+</div>
+
+<div class="budget-strip">
+  <div class="b-group">
+    <div class="b-label">火車總費用</div>
+    <div class="b-val">≈ €125</div>
+  </div>
+  <div class="b-group">
+    <div class="b-label">住宿 / 晚</div>
+    <div class="b-val">€30–50</div>
+  </div>
+  <div class="b-group">
+    <div class="b-label">飲食 / 日</div>
+    <div class="b-val">€20–30</div>
+  </div>
+  <div class="b-group">
+    <div class="b-label">總預算估算</div>
+    <div class="b-val">€700–1,000</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section-label">完整行程 · Day by Day</div>
+
+  <!-- DAY 1 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">01<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>台灣 → 米蘭</h2>
+        <div class="day-date">6月1日（週一）</div>
+      </div>
+      <div class="city-badge city-travel">出發日</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">晚上</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">✈️</span>桃園機場出發 → 米蘭 Linate（LIN）</div>
+          <div class="tl-note">飛行時間約13–14小時（視轉機路線）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">02<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>米蘭抵達 · 黃昏初拍</h2>
+        <div class="day-date">6月2日（週二）</div>
+      </div>
+      <div class="city-badge city-milan">Milano</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">09:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">✈️</span>抵達米蘭 Linate（LIN）</div>
+          <div class="tl-note">搭公車73號或機場巴士至市區，約30分鐘，€1.5–5</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">10:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🎒</span>Ostello Bello 行李寄存</div>
+          <div class="tl-note">入住時間為15:00，先寄存行李（€10–18），輕裝出門</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">11:00–15:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🍝</span>午餐休息 · 調整時差</div>
+          <div class="tl-note">附近逛逛，Sant'Ambrogio 區，避免過度疲勞</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">15:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🏨</span>辦理入住</div>
+          <div class="tl-note">Ostello Bello Milano Duomo｜Via Medici 3｜⭐ 4.5</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">16:30–18:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>黃金時段 — 史佛薩城堡</div>
+          <div class="tl-note">城堡外牆與護城河倒影，黃昏側光質感極佳</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">20:00–21:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>藍調時刻 — 艾紐曼二世迴廊</div>
+          <div class="tl-note">人潮散去，拱頂燈光反射在大理石地板，是夜拍首選</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">Ostello Bello Milano Duomo</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">交通</div>
+        <div class="info-cell-value">LIN 機場巴士 €1.5–5</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">飲食預算</div>
+        <div class="info-cell-value">€15–20（調時差日輕食）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">03<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>米蘭清晨攝影 → 威尼斯</h2>
+        <div class="day-date">6月3日（週三）</div>
+      </div>
+      <div class="city-badge city-milan">Milano → Venezia</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">05:30–07:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>清晨 — 米蘭大教堂廣場</div>
+          <div class="tl-note">幾乎無人，晨光最柔和。步行8分鐘從青旅出發</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">07:30–09:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>補拍 — 艾紐曼二世迴廊</div>
+          <div class="tl-note">早晨陽光透過玻璃穹頂形成光柱，角度與夜晚截然不同</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">09:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">☕</span>早餐 · 退房</div>
+          <div class="tl-note">站吧 Espresso + 可頌，約 €3</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">11:45</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚄</span>火車 Milano Centrale → Venezia Santa Lucia</div>
+          <div class="tl-note">直達，2小時27分 · 抵達 14:12 · 票價 €27.90（已購）</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">14:12–15:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🏨</span>抵達威尼斯 · 入住 · 整頓</div>
+          <div class="tl-note">DODO-Ostello Santa Fosca｜Cannaregio 區｜⭐ 4.2</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">17:30–19:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>黃昏 — 里亞托橋與大運河</div>
+          <div class="tl-note">夕陽打在水面，遊客開始散去，是最佳拍攝窗口</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">DODO-Ostello Santa Fosca</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">火車</div>
+        <div class="info-cell-value">€27.90（已確認）</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">飲食預算</div>
+        <div class="info-cell-value">€20–25</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">04<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>威尼斯全天 · 離島探索</h2>
+        <div class="day-date">6月4日（週四）</div>
+      </div>
+      <div class="city-badge city-venice">Venezia</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">05:30–07:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>清晨極品 — 聖馬可廣場</div>
+          <div class="tl-note">霧氣中的鐘樓、石板地面積水倒影，全天人潮最少的神聖時刻</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">08:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">☕</span>早餐</div>
+          <div class="tl-note">Caffè al Quadri 附近小吧台，站吧約 €3–5</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">09:00–11:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚢</span>水上巴士 → 布拉諾島（Burano）</div>
+          <div class="tl-note">從 Fondamente Nove 站搭船約40分鐘（住宿步行10分可到）</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">11:00–14:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>布拉諾島 — 彩色漁村</div>
+          <div class="tl-note">彩色小屋、靜謐小運河，是威尼斯最鮮豔的攝影題材</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">14:00–16:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚢</span>返回本島 · 漫步多索杜羅區</div>
+          <div class="tl-note">可順路經穆拉諾島（玻璃工藝島）停留30分鐘</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">18:00–20:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>黃昏 — 學院橋全景</div>
+          <div class="tl-note">大運河倒影聖母感恩聖殿，光線最豐富的魔幻時刻</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">DODO-Ostello Santa Fosca</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">水上巴士</div>
+        <div class="info-cell-value">日票約 €20（建議購買）</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">飲食預算</div>
+        <div class="info-cell-value">€20–25（Cicchetti 小食）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">05<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>威尼斯晨拍 → 佛羅倫斯</h2>
+        <div class="day-date">6月5日（週五）</div>
+      </div>
+      <div class="city-badge city-venice">Venezia → Firenze</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">05:30–07:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>最後清晨 — 里亞托橋小運河</div>
+          <div class="tl-note">晨霧瀰漫最美，Cannaregio 區巷弄也是絕佳街拍場景</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">08:00–10:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🍳</span>早餐 · 退房 · 前往車站</div>
+          <div class="tl-note">步行至聖塔露西亞站約12分鐘</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">11:05</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚄</span>火車 Venezia Santa Lucia → Firenze S.M.N.</div>
+          <div class="tl-note">直達，2小時15分 · 抵達 13:20 · 票價 €42.90（Youth，已購）</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">13:20–15:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🏨</span>抵達佛羅倫斯 · 行李寄存 · 午餐</div>
+          <div class="tl-note">My Friends｜Via Faenza 66（免費寄存）｜⭐ 4.6，入住後步行至中央市場</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">15:00–17:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚶</span>下午散步 — 領主廣場、聖十字聖殿</div>
+          <div class="tl-note">調整狀態，輕鬆逛，留體力給黃昏</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">17:30–19:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>黃金時段 — 米開朗基羅廣場</div>
+          <div class="tl-note">俯瞰全佛羅倫斯，Duomo＋老橋在斜陽下的全景。提前30分鐘到佔位</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">My Friends｜Via Faenza 66</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">火車</div>
+        <div class="info-cell-value">€42.90（已確認）</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">飲食預算</div>
+        <div class="info-cell-value">€20–25</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">06<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>佛羅倫斯全天 → 比薩</h2>
+        <div class="day-date">6月6日（週六）</div>
+      </div>
+      <div class="city-badge city-florence">Firenze → Pisa</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">05:30–07:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>清晨 — 老橋 Arno 河倒影</div>
+          <div class="tl-note">清晨5:30幾乎無人，是老橋最夢幻的時刻</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">07:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">☕</span>早餐 — 中央市場</div>
+          <div class="tl-note">市場美食廣場早餐約 €5–8，附近麵包店更便宜</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">08:30–11:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>上午 — 聖母百花大教堂 · 聖若望洗禮堂</div>
+          <div class="tl-note">彩色大理石外觀在晨光下最美，廣場已開始有人但尚可接受</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">11:30–13:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🖼️</span>烏菲茲美術館（需提前預約）</div>
+          <div class="tl-note">波提切利《維納斯的誕生》原作，票價 €25，週一休館</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">13:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🎒</span>退房 · 行李寄存於 My Friends（免費）</div>
+          <div class="tl-note">帶著攝影包輕裝前往比薩，大行李留在佛羅倫斯</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">13:28</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚂</span>火車 Firenze S.M.N. → Pisa Centrale</div>
+          <div class="tl-note">區域火車，1小時 · 抵達 14:28 · 票價 €9.30（已購）</div>
+        </div>
+      </div>
+      <div class="notice">
+        ⚠️ 建議改更早班次（9:00–10:00出發），讓你有更充裕的下午在比薩拍攝。區域車票固定票價 €9.30，任何班次都一樣，可於車站直接換票。
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">15:00–18:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>抵達比薩 — 奇蹟廣場日間拍攝</div>
+          <div class="tl-note">比薩斜塔、洗禮堂、主教堂，下午光線從西面打來，陰影角度佳</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">18:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🏨</span>入住比薩住宿 · 晚餐</div>
+          <div class="tl-note">Hotel Bologna / Hostel Pisa Tower 附近，約 €30–45</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">21:00–22:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>夜拍 — 奇蹟廣場</div>
+          <div class="tl-note">斜塔夜間打燈，遊客大幅減少，廣場24小時開放。長曝光效果極佳</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">比薩當地青旅 €30–45</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">火車</div>
+        <div class="info-cell-value">€9.30（已確認）</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">飲食預算</div>
+        <div class="info-cell-value">€20–25</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">07<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>比薩清晨極品 → 米蘭會合</h2>
+        <div class="day-date">6月7日（週日）</div>
+      </div>
+      <div class="city-badge city-pisa">Pisa → Milano</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">05:30–07:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>清晨極品 — 奇蹟廣場無人時刻</div>
+          <div class="tl-note">晨霧中的斜塔，全程最夢幻畫面。遊覽車9:30才開始湧入，搶在之前！</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">08:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">☕</span>早餐 · 退房</div>
+          <div class="tl-note">前一晚已將大行李寄存於比薩中央站（€6/件），取行李前往月台</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">11:42</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚄</span>火車 Pisa Centrale → Milano Centrale（直達）</div>
+          <div class="tl-note">4小時18分 · 抵達 16:00 · 票價 €36.50（已購）· 無需轉車</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-time">16:00–18:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🤝</span>抵達米蘭 · 與研討會夥伴會合</div>
+          <div class="tl-note">確認6/8行程、晚餐聚會</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">晚上</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚂</span>米蘭 → 帕維亞（視情況當晚或隔早出發）</div>
+          <div class="tl-note">Trenitalia 區域火車，約30分鐘，票價 €4–5</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">帕維亞 B&B 或研討會推薦住宿</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">火車</div>
+        <div class="info-cell-value">€36.50 + €4–5（已確認）</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">飲食預算</div>
+        <div class="info-cell-value">€25–30（聚餐）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">08<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>帕維亞 · 研討會 Day 1</h2>
+        <div class="day-date">6月8日（週一）</div>
+      </div>
+      <div class="city-badge city-pavia">Pavia</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="tl-time">全天</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🎓</span>學術研討會</div>
+          <div class="tl-note">Pavia 會議場地，與夥伴一同出席</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">20:30–22:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>夜拍 — Ponte Coperto（覆蓋橋）</div>
+          <div class="tl-note">提契諾河上的石拱橋，橋身燈光映在河面，長曝光效果絕佳</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">22:00–23:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>夜拍 — 帕維亞大教堂廣場</div>
+          <div class="tl-note">義大利第三高教堂，穹頂在夜燈下氣勢磅礡</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">帕維亞 B&B（€40–60）</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">交通</div>
+        <div class="info-cell-value">步行為主</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">飲食預算</div>
+        <div class="info-cell-value">€20–25</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">09<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>帕維亞 · 研討會 Day 2</h2>
+        <div class="day-date">6月9日（週二）</div>
+      </div>
+      <div class="city-badge city-pavia">Pavia</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="tl-time">全天</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🎓</span>學術研討會 Day 2</div>
+          <div class="tl-note">Pavia 會議場地</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">19:00–20:30</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>黃昏 — 聖米迦勒大教堂</div>
+          <div class="tl-note">隆巴底羅馬式建築，斜陽下石材質感極佳，是帕維亞最上鏡的立面</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-photo">
+        <div class="tl-time">21:00–23:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">📷</span>夜拍進階 — 再訪 Ponte Coperto</div>
+          <div class="tl-note">嘗試不同長曝光時間，捕捉水面光跡，帕維亞舊城小巷夜景也值得探索</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">住宿</div>
+        <div class="info-cell-value">帕維亞 B&B（€40–60）</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">備註</div>
+        <div class="info-cell-value">⚠️ 米蘭今晚 Eros Ramazzotti 演唱會，住宿費暴漲，住帕維亞正確！</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 10 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">10<span>Day</span></div>
+      <div class="day-title-block">
+        <h2>帕維亞 → 米蘭 → 英國 → 台灣</h2>
+        <div class="day-date">6月10日（週三）</div>
+      </div>
+      <div class="city-badge city-travel">返程日</div>
+    </div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="tl-time">上午</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🎒</span>退房 · 整理行李</div>
+          <div class="tl-note">確認所有攝影器材、充電器、護照</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">13:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🚂</span>帕維亞 → 米蘭（區域火車）</div>
+          <div class="tl-note">約30分鐘，票價 €4–5。13:00出發足夠在15:00前到 LIN</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">15:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">✈️</span>米蘭 Linate（LIN）→ 英國</div>
+          <div class="tl-note">建議12:30抵達機場，提前辦理登機手續</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">17:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">🇬🇧</span>抵達英國</div>
+          <div class="tl-note">轉機等待，可休息或在機場用餐</div>
+        </div>
+      </div>
+      <div class="timeline-item tl-transport">
+        <div class="tl-time">22:00</div>
+        <div class="tl-content">
+          <div class="tl-main"><span class="tl-icon">✈️</span>英國 → 台灣</div>
+          <div class="tl-note">長途飛行，帶好頸枕和眼罩，行程圓滿結束！</div>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-cell">
+        <div class="info-cell-label">火車</div>
+        <div class="info-cell-value">帕維亞→米蘭 €4–5</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">機場巴士</div>
+        <div class="info-cell-value">市區→LIN €1.5–5</div>
+      </div>
+      <div class="info-cell">
+        <div class="info-cell-label">備註</div>
+        <div class="info-cell-value">LIN 離市中心近，不需提早太多出發</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRAIN SUMMARY -->
+  <div class="train-summary">
+    <h3>🚄 火車費用總覽</h3>
+    <table class="train-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>路線</th>
+          <th>時間</th>
+          <th>費用</th>
+          <th>狀態</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6/3</td>
+          <td>Milano Centrale → Venezia Santa Lucia</td>
+          <td>11:45 → 14:12</td>
+          <td>€27.90</td>
+          <td style="color:#c9a84c">✓ 已購</td>
+        </tr>
+        <tr>
+          <td>6/5</td>
+          <td>Venezia Santa Lucia → Firenze S.M.N.</td>
+          <td>11:05 → 13:20</td>
+          <td>€42.90</td>
+          <td style="color:#c9a84c">✓ 已購（Youth）</td>
+        </tr>
+        <tr>
+          <td>6/6</td>
+          <td>Firenze S.M.N. → Pisa Centrale</td>
+          <td>13:28 → 14:28</td>
+          <td>€9.30</td>
+          <td style="color:#e8a87c">⚠ 建議換早班</td>
+        </tr>
+        <tr>
+          <td>6/7</td>
+          <td>Pisa Centrale → Milano Centrale（直達）</td>
+          <td>11:42 → 16:00</td>
+          <td>€36.50</td>
+          <td style="color:#c9a84c">✓ 已購</td>
+        </tr>
+        <tr>
+          <td>6/7</td>
+          <td>Milano → Pavia</td>
+          <td>區域火車</td>
+          <td>€4–5</td>
+          <td style="color:#aaa">尚未購</td>
+        </tr>
+        <tr>
+          <td>6/10</td>
+          <td>Pavia → Milano</td>
+          <td>約13:00出發</td>
+          <td>€4–5</td>
+          <td style="color:#aaa">尚未購</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="train-total">
+      <span class="label">總計（含未購）</span>
+      <span class="value">≈ €125</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  義大利攝影之旅 · 2026年6月1日–10日 · 為攝影師 &amp; 學生規劃
+</footer>
+
+</body>
+</html>
